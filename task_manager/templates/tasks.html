@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+</head>
+<body>
+{% for i in tasks %}
+    <p>{{ i.name }}</p>
+    <p>{{ i.description }}</p>
+    <p>{{ i.start_time }}</p>
+    <p>{{ i.deadline }}</p>
+    {% for j in i.tags.all %}
+        {{ j.slug }}
+    {% endfor %}
+    <p>{{ i.date_of_creation }}</p>
+    <br>
+{% endfor %}
+</body>
+</html>
